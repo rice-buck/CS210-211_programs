@@ -9,12 +9,11 @@ protected:
 
 public:
     Pet();
-    void setName(const std::string& newName);
+    void setName(const std::string& n);
     std::string getName() const;
 
-    // virtual version of speak()
     virtual std::string speak() const;
-    
+
     virtual ~Pet() {}
 };
 

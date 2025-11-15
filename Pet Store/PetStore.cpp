@@ -1,68 +1,109 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <memory>
 
 #include "Pet.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "Bird.hpp"
+#include "Fish.hpp"
 
 int main() {
-    std::vector<std::shared_ptr<Pet>> pets;
-    std::string input, name;
+    std::vector<Pet*> pets;
+    std::string input;
 
     while (true) {
-        std::cout << "Enter 'c' for cat or 'd' for dog (or STOP to quit): ";
+        std::cout << "Enter 'c' for cat \n'd' for dog \n'b' for bird\n 'f' for fish\n(or STOP): ";
         std::cin >> input;
 
-        if (input == "STOP" || input == "stop")
+        if (input == "STOP" || input == "stop") {
             break;
-
-        std::shared_ptr<Pet> aPet;
+        }
 
         if (input == "c") {
-            std::cout << "Enter the name of the cat: ";
+            std::string name, color;
+            std::cout << "Enter cat name: ";
             std::cin >> name;
-            std::cout << "Enter the cat's coat color: ";
-            std::string color;
+            std::cout << "Enter coat color: ";
             std::cin >> color;
 
-            aPet = std::make_shared<Cat>();
-            aPet->setName(name);
-            dynamic_cast<Cat*>(aPet.get())->setCoatColor(color);
+            Cat* c = new Cat();
+            c->setName(name);
+            c->setCoatColor(color);
+            pets.push_back(c);
 
         } else if (input == "d") {
-            std::cout << "Enter the name of the dog: ";
-            std::cin >> name;
-            std::cout << "Enter the dog's weight: ";
+            std::string name;
             double weight;
+
+            std::cout << "Enter dog name: ";
+            std::cin >> name;
+            std::cout << "Enter weight: ";
             std::cin >> weight;
 
-            aPet = std::make_shared<Dog>();
-            aPet->setName(name);
-            dynamic_cast<Dog*>(aPet.get())->setWeight(weight);
+            Dog* d = new Dog();
+            d->setName(name);
+            d->setWeight(weight);
+            pets.push_back(d);
 
-        } else {
-            std::cout << "Invalid choice.\n";
-            continue;
+        } else if (input == "b") {
+            std::string name;
+            std::string color;
+
+            std::cout << "Enter bird name: ";
+            std::cin >> name;
+            std::cout << "Enter feather color: ";
+            std::cin >> color;
+
+            Bird* b = new Bird();
+            b->setName(name);
+            b->setFeatherColor(color);
+            pets.push_back(b);
+
+        }else if (input == "f") {
+            std::string name;
+            std::string waterType;
+
+            std::cout << "Enter fish name: ";
+            std::cin >> name;
+            std::cout << "Enter it's  water type: ";
+            std::cin >> waterType;
+
+            Fish* f = new Fish();
+            f->setName(name);
+            f->setWaterType(waterType);
+            pets.push_back(f);
+
+        }else {
+            std::cout << "Invalid option.\n";
         }
-
-        pets.push_back(aPet);
     }
 
-    // Print all pets
-    for (auto& pet : pets) {
-        if (Cat* c = dynamic_cast<Cat*>(pet.get())) {
-            std::cout << pet->getName() << " is a "
-                      << c->getCoatColor() << " cat.\n";
+    std::cout << "\n--- Pet Summary ---\n";
 
-        } else if (Dog* d = dynamic_cast<Dog*>(pet.get())) {
-            std::cout << pet->getName() << " is a dog that weighs "
-                      << d->getWeight() << " pounds.\n";
+    for (Pet* p : pets) {
+        std::cout << p->getName() << " says " << p->speak() << ". ";
 
-        } else {
-            std::cout << pet->getName() << " is an unknown pet type.\n";
+        if (Cat* c = dynamic_cast<Cat*>(p)) {
+            std::cout << "It is a " << c->getCoatColor() << " cat.\n";
         }
+        else if (Dog* d = dynamic_cast<Dog*>(p)) {
+            std::cout << "It weighs " << d->getWeight() << " pounds.\n";
+        }
+        else if (Bird* b = dynamic_cast<Bird*>(p)) {
+            std::cout << "It is a " << b->getFeatherColor() << " colored bird.\n";
+        }
+        else if (Fish* f = dynamic_cast<Fish*>(p)) {
+            std::cout << "It is a " << f->getWaterType() << " water type fish.\n";
+        }
+        else {
+            std::cout << "(Unknown pet type)\n";
+        }
+    }
+
+    //cleanup
+    for (Pet* p : pets) {
+        delete p;
     }
 
     return 0;

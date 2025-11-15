@@ -1,7 +1,7 @@
 #include "Cat.hpp"
 
-void Cat::setCoatColor(const std::string& color) {
-    coatColor = color;
+void Cat::setCoatColor(const std::string& c) {
+    coatColor = c;
 }
 
 std::string Cat::getCoatColor() const {

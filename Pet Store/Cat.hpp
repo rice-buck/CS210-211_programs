@@ -9,7 +9,7 @@ private:
     std::string coatColor;
 
 public:
-    void setCoatColor(const std::string& color);
+    void setCoatColor(const std::string& c);
     std::string getCoatColor() const;
 
     std::string speak() const override;
