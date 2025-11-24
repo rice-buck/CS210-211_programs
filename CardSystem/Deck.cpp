@@ -4,7 +4,14 @@
 #include "Deck.hpp"
 #include "Card.hpp"
 
-void Deck::printDeck(){
-    for(const auto& card : deckVector)
-        std::cout << Card::rankToString(Card::card.getRank());
-}
+   //stores 52 Cards 
+    std::vector<Card>deckVector = {
+        
+    };
+
+    //prints deck vector
+    void Deck::printDeck(){
+        for(const auto& deck : deckVector){
+            deck.displayCard();
+        }
+    }

@@ -4,8 +4,68 @@
 
 //constructor with enums as parameters
 Card::Card(Rank rank, Suit suit) 
-    : rankValue(rank), suitValue(suit) {}
-
+    : rankValue(rank), suitValue(suit) {
+    switch (suit) {
+    case Suit::Diamonds: 
+        suitName = "Diamonds";
+        break;
+    case Suit::Clubs: 
+        suitName = "Clubs";
+        break;
+    case Suit::Hearts: 
+        suitName = "Hearts";
+        break;
+    case Suit::Spades: 
+        suitName = "Spades";
+        break;
+    throw std::invalid_argument("Unkown suit");
+    }
+    switch (rank) {
+    case Rank::Ace:
+        rankName = "Ace";
+        break;
+    case Rank::Two:
+        rankName = "Two";
+        break;
+    case Rank::Three:
+        rankName = "Three";
+        break;
+    case Rank::Four:
+        rankName = "Four";
+        break;
+    case Rank::Five: 
+        rankName = "Five";
+        break;
+    case Rank::Six:
+        rankName = "Six";
+        break;
+    case Rank::Seven:
+        rankName = "Seven";
+        break;
+    case Rank::Eight:
+        rankName = "Eight";
+        break;
+    case Rank::Nine: 
+        rankName = "Nine";
+        break;
+    case Rank::Ten: 
+        rankName = "Ten";
+        break;
+    case Rank::Jack: 
+        rankName = "Jack";
+        break;
+    case Rank::Queen: 
+        rankName = "Queen";
+        break;
+    case Rank::King: 
+        rankName = "King";
+        break;
+    default: 
+        throw std::invalid_argument("Unkown Rank");
+    }
+}
+ 
+//methods 
 Card::Suit Card::getSuit() const {
     return suitValue;
 }
@@ -13,32 +73,7 @@ Card::Suit Card::getSuit() const {
 Card::Rank Card::getRank() const {
     return rankValue;
 }
-//releates each enum value to a string
-std::string Card::suitToString(Suit s) {
-    switch (s) {
-    case Suit::Diamonds: return "Diamonds";
-    case Suit::Clubs: return "Clubs";
-    case Suit::Hearts: return "Hearts";
-    case Suit::Spades: return "Spades";
-    default: return "Unkown Suit";
-    }
-}
-//releates each enum value to a string
-std::string Card::rankToString(Rank r) {
-    switch (r) {
-    case Rank::Ace:return "Ace";
-    case Rank::Two:return "Two";
-    case Rank::Three:return "Three";
-    case Rank::Four:return "Four";
-    case Rank::Five: return "Five";
-    case Rank::Six:return "Six";
-    case Rank::Seven:return "Seven";
-    case Rank::Eight:return "Eight";
-    case Rank::Nine: return "Nine";
-    case Rank::Ten: return "Ten";
-    case Rank::Jack: return "Jack";
-    case Rank::Queen: return "Queen";
-    case Rank::King: return "King";
-    default: return "Unkown Rank";
-    }
+
+void Card::displayCard() const {
+    std::cout << "Rank: " << rankName << "\nSuit: " << suitName << std::endl;   
 }

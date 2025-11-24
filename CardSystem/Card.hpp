@@ -36,13 +36,13 @@ Suit getSuit() const;
 
 Rank getRank() const;
 
-static std::string suitToString(Suit s);
-
-static std::string rankToString(Rank r);
+//methods
+void displayCard() const;
 
 private:
+//
     Suit suitValue;
     Rank rankValue;
+    std::string suitName;
+    std::string rankName;
 };
-
-//do i really want to use enum if i want a card constructor??
