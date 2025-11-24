@@ -1,0 +1,13 @@
+#include "Cat.hpp"
+
+void Cat::setCoatColor(const std::string& c) {
+    coatColor = c;
+}
+
+std::string Cat::getCoatColor() const {
+    return coatColor;
+}
+
+std::string Cat::speak() const {
+    return "Meow!";
+}
