@@ -75,5 +75,5 @@ Card::Rank Card::getRank() const {
 }
 
 void Card::displayCard() const {
-    std::cout << "Rank: " << rankName << "\nSuit: " << suitName << std::endl;   
+    std::cout << rankName << " of " << suitName << std::endl;   
 }
