@@ -1,4 +1,5 @@
 #include "Card.hpp"
+#include "Hand.hpp"
 #include <vector>
 #include <algorithm>
 #include <random>
@@ -8,10 +9,7 @@
 
 class Deck{
     private:
-    //card vector stores 52 cards 
-    std::vector<Card>deckVector;
 
-    
     public:
     //constructor decleration to intialize vector
     Deck();
@@ -20,6 +18,10 @@ class Deck{
     void printDeck() const;
 
     //shuffle deck 
-    void shuffleDeck() ;
+    void shuffleDeck();
 
+    void dealCard();
+
+    //card vector stores 52 cards 
+    std::vector<Card>deckVector;
 };

@@ -39,6 +39,7 @@ Rank getRank() const;
 //methods
 void displayCard() const;
 
+
 private:
 //
     Suit suitValue;

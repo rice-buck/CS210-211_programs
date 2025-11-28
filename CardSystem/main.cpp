@@ -5,14 +5,20 @@ int main(){
    //create Deck
    Deck deck1;
 
-   //print ordered deck
-   deck1.printDeck();
-
    //shuffle deck
    deck1.shuffleDeck();
 
    //print shuffled deck
    deck1.printDeck();
+
+   //create Hand
+   Hand hand1;
+
+   //deal top card to hand
+   hand1.dealCard();
+
+   //print hand
+   hand1.printHand();
 
    return 0;
 }

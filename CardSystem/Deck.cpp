@@ -7,6 +7,7 @@
 #include <chrono>
 
 
+
    //Deck constuctor using intializer list
     Deck::Deck() : deckVector {
         // === Hearts ===
@@ -87,4 +88,11 @@
         std::mt19937 rng(seed); // Mersenne Twister engine
         std::shuffle(deckVector.begin(), deckVector.end(), rng);
     }
-    
+
+    void Deck::dealCard() {
+        if(!Deck::deckVector.empty()) { //check if hand is empty
+            Card topCard = Deck::deckVector.back(); //get top card from deck
+            Hand::handVector.push_back(topCard); //add top card to hand
+            Deck::deckVector.pop_back();//remove top card from deck
+        }
+    }
