@@ -1,5 +1,5 @@
 #include <string>
-
+#pragma once
 //card class
 class Card{
 public:

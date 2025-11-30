@@ -1,10 +1,10 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include "Deck.hpp"
 #include <algorithm>
 #include <random>
 #include <chrono>
+#include "Deck.hpp"
 
 
 
@@ -88,11 +88,10 @@
         std::mt19937 rng(seed); // Mersenne Twister engine
         std::shuffle(deckVector.begin(), deckVector.end(), rng);
     }
-
-    void Deck::dealCard() {
-        if(!Deck::deckVector.empty()) { //check if hand is empty
-            Card topCard = Deck::deckVector.back(); //get top card from deck
-            Hand::handVector.push_back(topCard); //add top card to hand
-            Deck::deckVector.pop_back();//remove top card from deck
+    //takes card from deck 
+    Card Deck::drawCard() {
+        std::cout << "Card drawn from deck" << std::endl;
+         Card topCard = deckVector.back();
+         deckVector.pop_back();
+         return topCard;
         }
-    }

@@ -1,12 +1,11 @@
 #include "Card.hpp"
-#include "Hand.hpp"
 #include <vector>
 #include <algorithm>
 #include <random>
 #include <chrono>
 #include <iostream>
 #include <string>
-
+#pragma once
 class Deck{
     private:
 
@@ -20,7 +19,8 @@ class Deck{
     //shuffle deck 
     void shuffleDeck();
 
-    void dealCard();
+    //takes card from deck 
+    Card drawCard();
 
     //card vector stores 52 cards 
     std::vector<Card>deckVector;

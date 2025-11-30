@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
-#include "Deck.hpp"
-
+#include "Card.hpp"
+#pragma once
 class Hand{
 public:
     //constructor
@@ -9,9 +9,15 @@ public:
 
     //print hand 
     void printHand() const;
-private:
+
+    //add card to  Hand
+    void addCard(const Card&);
+
     //stores cards in hand 
     std::vector<Card>handVector;
+    
+private:
+    
 
 };
 

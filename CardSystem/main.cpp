@@ -1,4 +1,6 @@
 #include "Deck.hpp"
+#include "Hand.hpp"
+#include "Player.hpp"
 #include <iostream>
 
 int main(){
@@ -8,19 +10,20 @@ int main(){
    //shuffle deck
    deck1.shuffleDeck();
 
-   //print shuffled deck
-   deck1.printDeck();
+   //create player
+   Player player1("Player 1");
+   std::cout << "Player: " << player1.getName() << std::endl;
+   
+   //add three cards to players hand
+   player1.addCard(deck1.drawCard());
+   player1.addCard(deck1.drawCard());
+   player1.addCard(deck1.drawCard());
 
-   //create Hand
-   Hand hand1;
-
-   //deal top card to hand
-   hand1.dealCard();
-
-   //print hand
-   hand1.printHand();
+   //display players hand
+   player1.showHand();
 
    return 0;
 }
 
 //add draw card and deal card method
+
