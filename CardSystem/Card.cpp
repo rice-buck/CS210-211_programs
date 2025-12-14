@@ -78,4 +78,31 @@ void Card::displayCard() const {
     std::cout << rankName << " of " << suitName << std::endl;   
 }
 
-
+//Blackjack values of card
+int Card::getValue() {
+    int cardValue;
+    if (rankName == "Ace"){
+        cardValue = 1;
+    } else if (rankName == "Two"){
+        cardValue = 2;
+    } else if (rankName == "Three"){
+        cardValue = 3;
+    } else if (rankName == "Four"){
+        cardValue = 4;
+    } else if (rankName == "Five"){
+        cardValue = 5;
+    } else if (rankName == "Six"){
+        cardValue = 6;
+    } else if (rankName == "Seven"){
+        cardValue = 7;
+    } else if (rankName == "Eight"){
+        cardValue = 8;
+    } else if (rankName == "Nine"){
+        cardValue = 9;
+    } else if (rankName == "Ten" || rankName == "Jack" || rankName == "Queen" || rankName == "King") {
+        cardValue = 10;
+    } else {
+        std::cout << "not found!";
+    }
+    return cardValue;
+}

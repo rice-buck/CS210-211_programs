@@ -15,9 +15,11 @@ public:
 
     //stores cards in hand 
     std::vector<Card>handVector;
+
+    //hand value 
+    void handValue();
     
 private:
-    
 
 };
 

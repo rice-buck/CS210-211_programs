@@ -1,6 +1,8 @@
 #include "Deck.hpp"
 #include "Hand.hpp"
 #include "Player.hpp"
+#include "Dealer.hpp"
+#include "Card.hpp"
 #include <iostream>
 
 int main(){
@@ -21,6 +23,18 @@ int main(){
 
    //display players hand
    player1.showHand();
+
+   player1.handValue();
+
+   //create dealer
+   Dealer dealer1;
+   std::cout << "Dealer created" << std::endl;
+
+   dealer1.addCard(deck1.drawCard());
+
+   dealer1.showHand();
+
+   dealer1.handValue();
 
    return 0;
 }

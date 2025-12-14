@@ -1,0 +1,10 @@
+Dealer checklist:
+
+-  Constructor exists X
+-  Dealer stores a Hand X
+-  Dealer can receive cards via addCard() X
+-  Dealer can print its hand X
+-  handValue() exists (stub okay) 
+-  playTurn(Deck&) is implemented
+-  The dealer draws cards in a loop
+-  It compiles and runs in main.cpp

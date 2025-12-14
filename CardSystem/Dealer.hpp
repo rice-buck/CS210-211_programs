@@ -11,8 +11,9 @@ class Dealer{
     void addCard(const Card&);
 
     void showHand() const;
+    
+    void handValue();
 
     private:
     Hand dealerHand;
-
 };

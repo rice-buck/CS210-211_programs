@@ -16,3 +16,11 @@ void Hand::addCard(const Card& card){
     std::cout << "Card added to Hand" << std::endl;
     handVector.push_back(card);
 }
+
+void Hand::handValue(){
+    int handValueSummed = 0;
+    for (int i = 0; i < handVector.size(); i++){
+        handValueSummed += handVector[i].getValue();
+    }
+    std::cout << handValueSummed << std::endl;
+}

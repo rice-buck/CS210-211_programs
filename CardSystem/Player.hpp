@@ -16,8 +16,9 @@ class Player{
 
     bool hitOrStand();
 
+    void handValue();
+
     private:
     std::string name;
     Hand playerHand;
-
 };

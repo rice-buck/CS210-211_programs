@@ -18,4 +18,8 @@ std::string Player::getName(){
     return name;
 }
 
+void Player::handValue(){
+    playerHand.handValue();
+}
+
 //hit or stand

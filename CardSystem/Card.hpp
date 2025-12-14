@@ -28,6 +28,7 @@ enum class Rank{
     Queen,
     King
 };
+
 //constructor
 Card(Rank rank, Suit suit);
 
@@ -36,9 +37,10 @@ Suit getSuit() const;
 
 Rank getRank() const;
 
+int getValue();
+
 //methods
 void displayCard() const;
-
 
 private:
 //
