@@ -9,7 +9,7 @@ int main(){
 
    //shuffle deck
    deck1.shuffleDeck();
-
+   
    //create player
    Player player1("Player 1");
    std::cout << "Player: " << player1.getName() << std::endl;
@@ -25,5 +25,4 @@ int main(){
    return 0;
 }
 
-//add draw card and deal card method
 

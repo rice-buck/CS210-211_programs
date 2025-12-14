@@ -16,4 +16,3 @@ void Hand::addCard(const Card& card){
     std::cout << "Card added to Hand" << std::endl;
     handVector.push_back(card);
 }
-
