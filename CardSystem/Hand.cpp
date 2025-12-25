@@ -13,14 +13,17 @@ void Hand::printHand() const{
 }
 
 void Hand::addCard(const Card& card){
-    std::cout << "Card added to Hand" << std::endl;
     handVector.push_back(card);
 }
 
-void Hand::handValue(){
+int Hand::getHandValue(){
     int handValueSummed = 0;
     for (int i = 0; i < handVector.size(); i++){
+        if (handVector[i].getValue() == 1 && handValueSummed <= 11){
+            handValueSummed += 11;
+        } else {
         handValueSummed += handVector[i].getValue();
+        }
     }
-    std::cout << handValueSummed << std::endl;
+    return handValueSummed;
 }

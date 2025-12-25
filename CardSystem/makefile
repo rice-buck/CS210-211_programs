@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -std=c++17
 
 
-SRC = main.cpp Card.cpp Hand.cpp Deck.cpp Player.cpp Dealer.cpp
+SRC = main.cpp Card.cpp Hand.cpp Deck.cpp Player.cpp Dealer.cpp Game.cpp
 OUT = game
 
 all: $(OUT)

@@ -12,7 +12,7 @@ class Dealer{
 
     void showHand() const;
     
-    void handValue();
+    //void handValue();
 
     private:
     Hand dealerHand;

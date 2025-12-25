@@ -5,6 +5,8 @@
 
 class Player{
     public:
+    //default constructor
+    Player();
     //contructor
     Player(std::string playerName);
 
@@ -12,11 +14,11 @@ class Player{
 
     void showHand() const;
 
+    void setName(std::string newName);
+
     std::string getName();
 
-    bool hitOrStand();
-
-    void handValue();
+    int getHandValue();
 
     private:
     std::string name;

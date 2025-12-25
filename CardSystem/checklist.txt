@@ -8,3 +8,14 @@ Dealer checklist:
 -  playTurn(Deck&) is implemented
 -  The dealer draws cards in a loop
 -  It compiles and runs in main.cpp
+
+
+Game is complete when:
+ Deck is created and shuffled
+ Player and Dealer receive cards
+ Player can hit or stand
+ Dealer plays automatically
+ Busts are handled
+ Winner is determined
+ main.cpp is minimal
+ Code is readable and modular

@@ -17,7 +17,9 @@ public:
     std::vector<Card>handVector;
 
     //hand value 
-    void handValue();
+    //void handValue();
+
+    int getHandValue();
     
 private:
 

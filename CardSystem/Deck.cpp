@@ -90,7 +90,6 @@
     }
     //takes card from deck 
     Card Deck::drawCard() {
-        std::cout << "Card drawn from deck" << std::endl;
          Card topCard = deckVector.back();
          deckVector.pop_back();
          return topCard;

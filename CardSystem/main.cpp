@@ -3,9 +3,11 @@
 #include "Player.hpp"
 #include "Dealer.hpp"
 #include "Card.hpp"
+#include "Game.hpp"
 #include <iostream>
 
 int main(){
+   /*
    //create Deck
    Deck deck1;
 
@@ -20,7 +22,7 @@ int main(){
    player1.addCard(deck1.drawCard());
    player1.addCard(deck1.drawCard());
    player1.addCard(deck1.drawCard());
-
+   
    //display players hand
    player1.showHand();
 
@@ -35,8 +37,11 @@ int main(){
    dealer1.showHand();
 
    dealer1.handValue();
+*/
+   Game game;
+   game.intialDeal();
+   game.playerTurn();
+   
 
    return 0;
 }
-
-
